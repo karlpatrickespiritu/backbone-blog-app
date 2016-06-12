@@ -6,25 +6,46 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container blog-container">
 		<h1>Backbone Blog App</h1>
+
+		<form name="blog-form">
+			<div class="form-group">
+				<label>Author</label>
+				<input type="author" class="form-control" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label>Title</label>
+				<input type="title" class="form-control" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label>Title</label>
+				<input type="title" class="form-control" placeholder="Password">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
 
 		<div class="table table-responsive">
 			<table class="table">
 				<thead>
-					<th>Author</th>
-					<th>Title</th>
-					<th>URL</th>
-					<th>Action</th>
+					<tr>
+						<th>Author</th>
+						<th>Title</th>
+						<th>URL</th>
+						<th>Action</th>
+					</tr>
 				</thead>
+				<tbody class="blog-list"></tbody>
 			</table>
 		</div>
 	</div>
 
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="bower_components/underscore/underscore-min.js"></script>
-	<script src="bower_components/backbone/backbone-min.js"></script>
-	<script src="js/scripts/scripts.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
+	
+	<script type="text/template" src="js/templates/blog-list.js" class="blog-list-template"></script>
+	<script type="text/javascript" src="js/scripts/scripts.js"></script>
 </body>
 </html>
