@@ -69,8 +69,8 @@
       var $this, sFormData;
       e.preventDefault();
       $this = $(this);
-      sFormData = $this.serialize();
-      return console.log(sFormData);
+      sFormData = $this.serializeArray();
+      return console.log(typeof JSON.stringify(sFormData));
     });
   });
 

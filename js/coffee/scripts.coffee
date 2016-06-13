@@ -60,6 +60,3 @@ $(document).ready () ->
 	$blogForm.on 'submit', (e) -> 
 		e.preventDefault()
 		$this = $ this
-		sFormData = $this.serialize()
-
-		console.log sFormData
