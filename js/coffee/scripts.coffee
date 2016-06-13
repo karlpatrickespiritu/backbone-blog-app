@@ -38,6 +38,7 @@ blogView = new Backbone.View.extend
 		blogData = this.model.toJSON()
 
 		this.$el.html this.template blogData
+		return this
 
 blogViews = new Backbone.View.extend
 	model: blogs
@@ -49,14 +50,23 @@ blogViews = new Backbone.View.extend
 		this.$el.html ''
 		_.each(this.model.toArray(), (blog) ->
 			blogView = new blogView model: blog
-			self.$el.append blogView.render().$el
+			self.$el.append blogView.render, this
 		)
+		return this
 
+blogsView = new blogView();
 
 # jQuery
 $(document).ready () -> 
-	$blogForm = $('form[name=blog-form]')
+	$blogForm = $ 'form[name=blog-form]'
 
 	$blogForm.on 'submit', (e) -> 
 		e.preventDefault()
 		$this = $ this
+
+		blog = new BlogModel
+			author: $blogForm.find('input[name=author]').val()
+			title: $blogForm.find('input[name=title]').val()
+			url: $blogForm.find('input[name=url]').val()
+
+		blog.add blog
